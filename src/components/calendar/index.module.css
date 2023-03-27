@@ -1,0 +1,59 @@
+.main-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.room-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3)
+}
+
+.session-container {
+  margin: .5rem;
+  padding: 1rem;
+  border: 1px solid #cecece;
+  border-radius: 1rem;
+  font-weight: 500;
+  /* width: 10rem; */
+}
+
+.calendar-main {
+  border: none !important;
+  border-radius: 1rem !important;
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+
+.day-container {
+  position: relative;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border-radius: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.day-name {
+  font-weight: 700;
+}
+
+.room-name {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.program-container {
+  display: flex;
+  flex-wrap: wrap;
+}

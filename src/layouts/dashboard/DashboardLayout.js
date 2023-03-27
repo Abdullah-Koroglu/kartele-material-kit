@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 // @mui
 import { styled } from '@mui/material/styles';
 //
@@ -32,9 +32,15 @@ const Main = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
+const useAuth = (jwt) => {
+  return jwt && true;
+};
+
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
+  const jwt = localStorage.getItem("jwt");
 
+  const isAuth = useAuth (jwt);
   return (
     <StyledRoot>
       <Header onOpenNav={() => setOpen(true)} />
@@ -42,7 +48,7 @@ export default function DashboardLayout() {
       <Nav openNav={open} onCloseNav={() => setOpen(false)} />
 
       <Main>
-        <Outlet />
+      {isAuth ? <Outlet /> : <Navigate to="/login" />}
       </Main>
     </StyledRoot>
   );
