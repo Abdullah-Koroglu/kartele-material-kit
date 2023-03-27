@@ -4,7 +4,7 @@ import DashboardLayout from './layouts/dashboard';
 import SimpleLayout from './layouts/simple';
 //
 import BlogPage from './pages/BlogPage';
-import UserPage from './pages/UserPage';
+import SessionsPage from './pages/SessionsPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import ProductsPage from './pages/ProductsPage';
@@ -20,8 +20,8 @@ export default function Router() {
       children: [
         { element: <Navigate to="/app/calendar" />, index: true },
         { path: 'calendar', element: <DashboardAppPage /> },
-        { path: 'create_session', element: <UserPage /> },
-        { path: 'my_session', element: <ProductsPage /> },
+        { path: 'create_session', element: <ProductsPage /> },
+        { path: 'my_session', element: <SessionsPage /> },
         { path: 'my_clients', element: <BlogPage /> },
       ],
     },
