@@ -3,7 +3,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from './layouts/dashboard';
 import SimpleLayout from './layouts/simple';
 //
-import BlogPage from './pages/BlogPage';
+import ClientsPage from './pages/ClientsPage';
 import SessionsPage from './pages/SessionsPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
@@ -22,7 +22,7 @@ export default function Router() {
         { path: 'calendar', element: <DashboardAppPage /> },
         { path: 'create_session', element: <ProductsPage /> },
         { path: 'my_session', element: <SessionsPage /> },
-        { path: 'my_clients', element: <BlogPage /> },
+        { path: 'my_clients', element: <ClientsPage /> },
       ],
     },
     {

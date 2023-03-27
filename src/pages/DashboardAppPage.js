@@ -1,6 +1,6 @@
 import Calendar from "../components/calendar";
 
-const CalendarPage = () => {
+export default function CalendarPage () {
   return (
     <div className={CSS["main-container"]}>
       {Calendar ()}
@@ -8,5 +8,3 @@ const CalendarPage = () => {
   )
 
 }
-
-export default CalendarPage
