@@ -23,7 +23,7 @@
   border: 1px solid #cecece;
   border-radius: 1rem;
   font-weight: 500;
-  /* width: 10rem; */
+  max-width: calc(100% - 2rem);
 }
 
 .calendar-main {

@@ -1,0 +1,80 @@
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  overflow: hidden;
+}
+
+.calendar-container {
+  min-width: 21rem;
+  max-width: calc(100% - 31rem);
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.form-container {
+  padding: 0 3rem;
+  min-width: 24rem;
+  /* margin: 1rem; */
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  color: #49444C;
+  font-size: 16px;
+  margin: 1rem 0;
+}
+
+.form-field {
+  border: 1px solid #9C89B8;
+  padding: .8rem;
+  border-radius: .5rem;
+  background-color: white;
+  margin-top: .3rem;
+  width: 17rem;
+}
+
+.form-submit {
+  background-color: #369CC0;
+  color: white;
+  padding: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: .5rem;
+  width: 17rem;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
+.add-user-icon {
+  background-color: #369CC0;
+  padding: .2rem;
+  border-radius: 1rem;
+  color: white;
+}
+.add-user-icon:hover {cursor: pointer;}
+.form-submit:hover {
+  cursor: pointer;
+}
+
+.text-field {
+  width: 90%;
+}
+
+.page-header {
+  font-weight: 700;
+  font-size: 50px;
+  color: #369CC0;
+}
+
+.go-back-icon {
+  color: #369CC0;
+  padding: .2rem;
+  /* border-radius: 1rem; */
+}

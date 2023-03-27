@@ -29,6 +29,8 @@ import Iconify from '../components/iconify';
 import Scrollbar from '../components/scrollbar';
 // sections
 import { UserListHead } from '../sections/@dashboard/user';
+import { ProductFilterSidebar } from '../sections/@dashboard/products';
+
 
 
 // ----------------------------------------------------------------------
@@ -59,6 +61,7 @@ export default function SessionsPage() {
   const [sessionTypes, setSessionTypes] = useState([])
   const [rows, setRows] = useState([])
   const [rooms, setRooms] = useState([])
+  const [openFilter, setOpenFilter] = useState(false);
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
 
@@ -136,6 +139,14 @@ export default function SessionsPage() {
     }))
   }
 
+  const handleOpenFilter = () => {
+    setOpenFilter(true);
+  };
+
+  const handleCloseFilter = () => {
+    setOpenFilter(false);
+  };
+
   const handleOpenMenu = (event) => {
     setOpen(event.currentTarget);
   };
@@ -170,6 +181,15 @@ export default function SessionsPage() {
           <Typography variant="h4" gutterBottom>
             Seans Listesi
           </Typography>
+        </Stack>
+        <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
+          <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
+            <ProductFilterSidebar
+              openFilter={openFilter}
+              onOpenFilter={handleOpenFilter}
+              onCloseFilter={handleCloseFilter}
+            />
+          </Stack>
         </Stack>
 
         <Card>

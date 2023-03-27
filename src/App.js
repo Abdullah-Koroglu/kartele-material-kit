@@ -1,5 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 // routes
 import Router from './routes';
@@ -18,9 +20,9 @@ axios.defaults.headers.common.Authorization = localStorage.getItem ('jwt') ? `Be
 axios.interceptors.response.use(
   response => response.data,
   error => {
-    if (error.response.status === 401) {
-      window.location.href = '/';
-    } else if (error.response.status === 403) {
+    if (error.response?.status === 401) {
+      window.location.href = '/app';
+    } else if (error.response?.status === 403) {
       localStorage.removeItem('jwt')
       localStorage.removeItem('user')
       axios.defaults.headers.common.Authorization = null;
@@ -34,6 +36,18 @@ export default function App() {
       <BrowserRouter>
         <ThemeProvider>
           <ScrollToTop />
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
           <StyledChart />
           <Router />
         </ThemeProvider>

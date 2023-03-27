@@ -7,7 +7,7 @@ import ClientsPage from './pages/ClientsPage';
 import SessionsPage from './pages/SessionsPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
-import ProductsPage from './pages/ProductsPage';
+import CreateSessionPage from './pages/CreateSessionPage';
 import DashboardAppPage from './pages/DashboardAppPage';
 
 // ----------------------------------------------------------------------
@@ -20,7 +20,7 @@ export default function Router() {
       children: [
         { element: <Navigate to="/app/calendar" />, index: true },
         { path: 'calendar', element: <DashboardAppPage /> },
-        { path: 'create_session', element: <ProductsPage /> },
+        { path: 'create_session', element: <CreateSessionPage /> },
         { path: 'my_session', element: <SessionsPage /> },
         { path: 'my_clients', element: <ClientsPage /> },
       ],
