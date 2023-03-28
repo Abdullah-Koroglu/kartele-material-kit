@@ -3,6 +3,7 @@ import CSS from "./index.module.css"
 
 function Modal({children, open, setOpenFromParent}) {
   const [isOpen, setOpen] = useState (open)
+  console.log(open);
   useEffect (() => {
     setOpen (open)
   }, [open])

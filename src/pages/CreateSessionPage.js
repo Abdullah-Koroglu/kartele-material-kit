@@ -71,7 +71,8 @@ export default function CreateSessionPage() {
   }
 
   const handleCloseModal = (e) => {
-    setModalOpen(e); getFormData()
+    console.log ('asdf')
+    setModalOpen(); getFormData()
   }
 
   useEffect (() => {
