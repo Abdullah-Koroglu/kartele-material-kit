@@ -54,6 +54,7 @@ const TABLE_HEAD = [
 export default function SessionsPage() {
   const navigate = useNavigate ()
   const [open, setOpen] = useState(null);
+  const [openId, setOpenId] = useState(null);
   const [page, setPage] = useState(0);
   const [filterName, setFilterName] = useState('');
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -147,12 +148,14 @@ export default function SessionsPage() {
     setOpenFilter(false);
   };
 
-  const handleOpenMenu = (event) => {
+  const handleOpenMenu = (event, id) => {
     setOpen(event.currentTarget);
+    setOpenId(id)
   };
 
   const handleCloseMenu = () => {
     setOpen(null);
+    setOpenId(null)
   };
 
   const handleChangePage = (event, newPage) => {
@@ -262,7 +265,7 @@ export default function SessionsPage() {
                           </TableCell>
 
                           <TableCell align="right">
-                            <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
+                            <IconButton size="large" color="inherit" onClick={(e) => {handleOpenMenu (e, row.id);}}>
                               <Iconify icon={'eva:more-vertical-fill'} />
                             </IconButton>
                           </TableCell>
@@ -333,7 +336,7 @@ export default function SessionsPage() {
           },
         }}
       >
-        <MenuItem onClick={() => {navigate (`app/session/${'1'}`)}}>
+        <MenuItem onClick={() => {navigate (`/app/session/${openId}`)}}>
           <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
           Düzenle
         </MenuItem>

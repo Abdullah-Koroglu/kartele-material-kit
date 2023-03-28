@@ -1,0 +1,72 @@
+.page-header {
+  font-weight: 700;
+  font-size: 50px;
+  color: #369CC0;
+}
+
+.go-back-icon {
+  color: #369CC0;
+  padding: .2rem;
+  /* border-radius: 1rem; */
+}
+
+
+.form-submit {
+  background-color: #369CC0;
+  color: white;
+  padding: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: .5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-submit:hover {
+  cursor: pointer;
+}
+
+.attribute-row {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+}
+
+.is-attribute {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddf6ff;
+  height: 30px;
+  width: 30px;
+  margin-inline-start: 1rem;
+  border-radius: .5rem;
+}
+
+.is-attribute:hover {
+  cursor: pointer;
+}
+
+.summer-note {
+  /* width: 45rem; */
+  margin: 1rem 0;
+}
+
+.answer {
+  margin-inline-start: 1rem;
+}
+
+.note-row {
+  margin-top: .5rem;
+}
+
+.inner-container {
+  max-width: 35rem;
+  padding: 1rem;
+}
+
+.main-container {
+width: 100%;
+display: flex;
+flex-direction: column;
+}

@@ -58,7 +58,7 @@ export default function CreateSessionPage() {
         toast.error(response.message ?? 'error')
         return
       }
-      if (response) {navigate ('/my_sessions')}
+      if (response) {navigate ('/app/my_sessions')}
       else {
         toast.error('error')
         return
@@ -71,7 +71,6 @@ export default function CreateSessionPage() {
   }
 
   const handleCloseModal = (e) => {
-    console.log ('asdf')
     setModalOpen(); getFormData()
   }
 

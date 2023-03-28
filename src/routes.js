@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import CreateSessionPage from './pages/CreateSessionPage';
 import DashboardAppPage from './pages/DashboardAppPage';
+import SessionDetail from './pages/SessionDetail';
 
 // ----------------------------------------------------------------------
 
@@ -23,6 +24,7 @@ export default function Router() {
         { path: 'create_session', element: <CreateSessionPage /> },
         { path: 'my_session', element: <SessionsPage /> },
         { path: 'my_clients', element: <ClientsPage /> },
+        { path: 'session/:id', element: <SessionDetail /> },
       ],
     },
     {
