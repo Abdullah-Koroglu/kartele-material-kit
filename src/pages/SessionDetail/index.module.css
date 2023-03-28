@@ -61,7 +61,7 @@
 }
 
 .inner-container {
-  max-width: 35rem;
+  max-width: 50rem;
   padding: 1rem;
 }
 
@@ -69,4 +69,5 @@
 width: 100%;
 display: flex;
 flex-direction: column;
+align-items: center;
 }

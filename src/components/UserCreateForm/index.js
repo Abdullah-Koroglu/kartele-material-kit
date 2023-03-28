@@ -1,8 +1,6 @@
 import { Formik, Field, Form } from "formik";
-import { useState } from "react";
 import axios from "axios";
 import CSS from "./index.module.css"
-import { DatePickerField } from "../FormikDatePicker";
 
 function UserForm({done}) {
   const genders = [
@@ -10,15 +8,17 @@ function UserForm({done}) {
     {value : 'Erkek'},
     {value : 'Kadın'},
   ]
-  const [birthDate, setBirthDate] = useState();
-
-  const registerUser = async ({name,gender,birthDate, tcId}) => {
+  const fields = [
+    {value : 'Yetişkin'},
+    {value : 'Çocuk'},
+  ]
+  const registerUser = async ({name,gender,field, tcId}) => {
     const user = JSON.parse(localStorage.getItem('user'))
     try {
       const response = await axios.post('clients', {data: {
         name,
         gender,
-        birth_date: birthDate,
+        field,
         therapist: user,
         tc_id: tcId
       }})
@@ -61,7 +61,16 @@ function UserForm({done}) {
                   {genders?.map (gender => <option key={gender.value} value={gender.value}>{gender.value}</option>)}
               </Field>
             </div>
-            <div className={`${CSS["text-field"]} ${CSS["form-element"]}`}>
+            <div className={CSS["form-element"]}>
+              <span // eslint-disable-next-line
+              htmlFor="field">
+                Alan
+              </span>
+              <Field id="field" className={CSS["form-field"]} as="select" name="field">
+                  {fields?.map (field => <option key={field.value} value={field.value}>{field.value}</option>)}
+              </Field>
+            </div>
+            {/* <div className={`${CSS["text-field"]} ${CSS["form-element"]}`}>
               <span // eslint-disable-next-line
               htmlFor="birthDate">
                 Doğum Tarihi
@@ -74,8 +83,7 @@ function UserForm({done}) {
                 onChange={(date) => setBirthDate(date)}
                 // timeClassName={handleColor}
               />
-              {/* {errors.password && <p>{errors.password}</p>} */}
-            </div>
+            </div> */}
             <div className={`${CSS["text-field"]} ${CSS["form-element"]}`}>
               <span // eslint-disable-next-line
               htmlFor="tc_id">

@@ -58,7 +58,7 @@ export default function CreateSessionPage() {
         toast.error(response.message ?? 'error')
         return
       }
-      if (response) {navigate ('/app/my_sessions')}
+      if (response) {navigate ('/my_sessions')}
       else {
         toast.error('error')
         return

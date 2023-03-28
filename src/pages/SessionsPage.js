@@ -65,18 +65,12 @@ export default function SessionsPage() {
   const [openFilter, setOpenFilter] = useState(false);
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
-
-  const boolSelect = [
-    { value: true, label: 'Evet' },
-    { value: false, label: 'Hayır' },
-    { value: 0, label: 'Boş' },
-  ]
-  const [filterData, setFilterData] = useState({
-    client: undefined,
-    room: undefined,
-    is_paid: undefined,
-    is_completed: undefined,
-    session_type: undefined,
+  const [filterData, setFilterData] = useState ({
+    client: -1,
+    room: -1,
+    is_paid: -1,
+    is_completed: -1,
+    session_type: -1,
   })
 
   const getSessions = async () => {
@@ -131,6 +125,7 @@ export default function SessionsPage() {
           isPaid: sessionData.is_paid === true ? <FaCheck color="#50C878" /> : sessionData.is_paid === false ? <FaTimes color="#f44336" /> : null,
           isCompleted: sessionData.is_completed === true ? <FaCheck color="#50C878" /> : sessionData.is_completed === false ? <FaTimes color="#f44336" /> : null,
           name: sessionData.client.data.attributes.name,
+          field: sessionData.client.data.attributes.field,
           gender: sessionData.client.data.attributes.gender,
           room: sessionData.room.data.attributes.name,
           id: session.id,
@@ -191,13 +186,14 @@ export default function SessionsPage() {
               openFilter={openFilter}
               onOpenFilter={handleOpenFilter}
               onCloseFilter={handleCloseFilter}
+              formData={{clients, sessionTypes, rooms}}
+              filterData={filterData}
+              setFilterData={setFilterData}
             />
           </Stack>
         </Stack>
 
         <Card>
-          {/* <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} /> */}
-
           <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
               <Table width='100%'>
