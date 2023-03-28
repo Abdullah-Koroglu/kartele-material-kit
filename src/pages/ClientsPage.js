@@ -45,7 +45,7 @@ export default function ClientsPage() {
   const getClients = async () => {
     const user = JSON.parse(localStorage.getItem('user'))
     setLoading(true)
-    const clients = await axios.get (`clients?filters[$and][0][therapist][id]=${user.id}&filters[$and][1][active][$ne]=false&populate=*&pagination[page]=${page+1}&pagination[pageSize]=${rowsPerPage}&sort[0]=birth_date`)
+    const clients = await axios.get (`clients?filters[$and][0][therapist][id]=${user.id}&filters[$and][1][active][$ne]=false&populate=*&pagination[page]=${page+1}&pagination[pageSize]=${rowsPerPage}`)
     setLoading(false)
     setCount(clients.meta.pagination.total)
 
