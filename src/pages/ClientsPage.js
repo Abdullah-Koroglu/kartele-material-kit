@@ -105,7 +105,7 @@ export default function ClientsPage() {
                   :
                   <TableBody>
                     {rows.map((row) => {
-                      const { id, tc_id: tcId, name, type } = row;
+                      const { id, tc_id: tcId, name, field } = row;
 
                       return (
                         <TableRow hover key={id} tabIndex={-1} role="checkbox">
@@ -125,7 +125,7 @@ export default function ClientsPage() {
                           <TableCell align="left">{name}</TableCell>
 
                           <TableCell align="left">
-                            {type}
+                            {field}
                           </TableCell>
                           <TableCell align="left"/>
                         </TableRow>
